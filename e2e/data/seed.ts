@@ -87,10 +87,10 @@ export async function seedDiscount(axios?: AxiosInstance) {
 }
 
 async function loginAdmin() {
-  const resp = await axios.post("/admin/auth/token", {
+  const resp = await axios.post(`${process.env.API_BASE_URL}/admin/auth/token`, {
     email: process.env.MEDUSA_ADMIN_EMAIL || "admin@medusa-test.com",
     password: process.env.MEDUSA_ADMIN_PASSWORD || "supersecret",
-  })
+  });
   if (resp.status !== 200) {
     throw { error: "must be able to log in user" }
   }
