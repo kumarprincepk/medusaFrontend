@@ -72,6 +72,7 @@ export default defineConfig({
   webServer: {
      command: 'yarn start',
      url: process.env.NEXT_PUBLIC_BASE_URL,
+     timeout: 120000,
   //   reuseExistingServer: !process.env.CI,
   },
 })
